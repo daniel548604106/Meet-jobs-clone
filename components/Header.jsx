@@ -27,7 +27,7 @@ const Header = () => {
       href: '/employer-landing',
     },
     {
-      name: '職涯專欄',
+      name: 'journal',
       href: '#',
     },
   ];
