@@ -1,5 +1,5 @@
 import dbConnect from '../../../utils/mongodb';
-import Job from '../../../model/JobModel';
+import Job from '../../../model/jobModel';
 export default async function handler(req, res) {
   const { method } = req;
 
