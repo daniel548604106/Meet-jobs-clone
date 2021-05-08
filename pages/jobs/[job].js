@@ -2,6 +2,7 @@ import React from 'react';
 import JobIntro from '../../components/Jobs/Job/JobIntro';
 import JobDescription from '../../components/Jobs/Job/JobDescription';
 import CallToAction from '../../components/Jobs/Job/CallToAction';
+import CallToActionMobile from '../../components/Jobs/Job/CallToActionMobile';
 import CompanyInfo from '../../components/Jobs/Job/CompanyInfo';
 import Vacancies from '../../components/Jobs/Job/Vancancies';
 import Event from '../../components/Global/Event';
@@ -16,7 +17,7 @@ const Job = () => {
           <CompanyInfo />
           <Vacancies />
         </div>
-        <div className="ml-5">
+        <div className="ml-5 hidden sm:block">
           <div className="mb-5">
             <Event />
           </div>
@@ -24,6 +25,7 @@ const Job = () => {
             <CallToAction />
           </div>
         </div>
+        <CallToActionMobile />
       </div>
     </div>
   );

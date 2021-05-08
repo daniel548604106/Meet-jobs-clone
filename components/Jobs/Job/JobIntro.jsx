@@ -2,7 +2,7 @@ import React from 'react';
 import Tag from '../../../components/Global/Tag';
 const JobIntro = () => {
   return (
-    <div className="bg-white p-10 rounded-lg shadow-xl mb-10">
+    <div className="bg-white p-10 rounded-lg shadow-xl mb-5 sm:mb-10">
       <h1 className="text-3xl font-bold mb-5">Account Manager 客戶經理</h1>
       <p className="mb-3">
         Meet.jobs <span>Taiwan</span>
