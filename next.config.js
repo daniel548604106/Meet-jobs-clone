@@ -19,4 +19,14 @@ module.exports = {
     defaultLocale: 'tw',
     localeDetection: true,
   },
+  async rewrites() {
+    return {
+      fallback: [
+        {
+          source: '/v1/:path*',
+          destination: `http://localhost:3001/v1/:path*`,
+        },
+      ],
+    };
+  },
 };
