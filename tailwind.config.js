@@ -16,6 +16,8 @@ module.exports = {
       }),
       color: {
         'button-blue': '#189fac',
+        white: '#fff',
+        'bg-white': '#f5f6f7',
       },
       width: {
         '30px': '30px',
@@ -33,6 +35,7 @@ module.exports = {
         '50px': '50px',
         '60px': '60px',
         '70px': '70px',
+        '100px': '100px',
         '300px': '300px',
         '730px': '730px',
         '60vh': '60vh',
@@ -79,7 +82,9 @@ module.exports = {
         '80px': '80px',
         '90px': '90px',
         '100px': '100px',
+        '200px': '200px',
         '300px': '300px',
+        '350px': '350px',
       },
       maxWidth: {
         '300px': '300px',

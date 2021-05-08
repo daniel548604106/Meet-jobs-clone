@@ -24,7 +24,7 @@ const Advantage = () => {
     },
   ];
   return (
-    <div className="py-10 sm:py-20 px-5 flex items-center justify-center">
+    <div className="py-10 sm:py-20 px-5 flex items-center justify-center bg-white">
       <div>
         <h1 className=" text-xl sm:text-3xl text-center font-semibold mb-10">
           Meet.jobs - 專業人才的推薦工作平台

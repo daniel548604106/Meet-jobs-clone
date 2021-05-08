@@ -1,23 +1,16 @@
 import React, { useEffect } from 'react';
 import request from '../../lib/axiosConfig';
+import JobInfoCard from '../../components/Jobs/JobInfoCard';
+import Link from 'next/link';
 const index = ({ jobs }) => {
-  // const [jobs, setJobs] = useState(null);
-  // const getJobs = async () => {
-  //   try {
-  //     const { data } = await request.get('/api/jobs');
-  //     setJobs(data.jobs);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getJobs();
-  // });
   return (
-    <div>
-      Jobs
-      {jobs && jobs.map((job) => <div key={job.company_name}>{job.company_name}</div>)}
+    <div className="p-3 mx-auto max-w-5xl py-10">
+      {jobs &&
+        jobs.map((job) => (
+          <Link href="/jobs/123" className="cursor-pointer" key={job.company_name}>
+            <JobInfoCard job={job} />
+          </Link>
+        ))}
     </div>
   );
 };

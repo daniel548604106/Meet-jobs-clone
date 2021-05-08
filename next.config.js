@@ -1,6 +1,6 @@
 module.exports = {
   images: {
-    domains: ['meet.jobs'],
+    domains: ['meet.jobs', 'images.unsplash.com'],
   },
   webpack(config) {
     config.module.rules.push({
@@ -19,14 +19,14 @@ module.exports = {
     defaultLocale: 'tw',
     localeDetection: true,
   },
-  async rewrites() {
-    return {
-      fallback: [
-        {
-          source: '/v1/:path*',
-          destination: `http://localhost:3001/v1/:path*`,
-        },
-      ],
-    };
-  },
+  // async rewrites() {
+  //   return {
+  //     fallback: [
+  //       {
+  //         source: '/v1/:path*',
+  //         destination: `http://localhost:3001/v1/:path*`,
+  //       },
+  //     ],
+  //   };
+  // },
 };

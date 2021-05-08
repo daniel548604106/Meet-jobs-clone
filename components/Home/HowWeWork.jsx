@@ -19,7 +19,7 @@ const HowWeWork = () => {
     },
   ];
   return (
-    <div className="text-center p-5 sm:p-20">
+    <div className="text-center p-5 sm:p-20 bg-white">
       <h1 className="text-2xl sm:text-4xl font-bold mb-10 sm:mb-20">如何使用 Meet.jobs</h1>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         {steps.map((step, idx) => (

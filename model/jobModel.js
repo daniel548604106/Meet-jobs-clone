@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 const jobSchema = new mongoose.Schema(
   {
-    email: {
+    title: {
       type: String,
-      required: true,
-      unique: true,
-      lowercase: true,
     },
-    company_name: {
+    company: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'company',
+    },
+    salary: {
       type: String,
-      required: true,
     },
   },
   {

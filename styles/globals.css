@@ -8,3 +8,7 @@ select,
 button {
   outline: none;
 }
+
+body {
+  background-color: #f5f6f7;
+}
