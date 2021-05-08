@@ -5,7 +5,7 @@ const SearchBar = () => {
   return (
     <div
       className={`
-          bg-gray-300 fixed z-40 w-full top-0  ease-in-out duration-300
+          bg-gray-300 hidden fixed z-40 w-full top-0  ease-in-out duration-300
         ${active && 'translate-y-full transform transition-all'} `}
     >
       <div className="h-60px py-2 flex flex-col sm:flex-row max-w-760px mx-auto px-3">

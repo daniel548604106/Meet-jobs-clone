@@ -7,7 +7,7 @@ import Vacancies from '../../components/Jobs/Job/Vancancies';
 import Event from '../../components/Global/Event';
 const Job = () => {
   return (
-    <div className="mx-auto max-w-6xl py-10 px-5">
+    <div className="mx-auto max-w-6xl py-5 sm:py-10 px-5">
       <p className="mb-5">總覽 / Meet.Jobs / Account Manager 客戶經理</p>
       <div className="flex ">
         <div>

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Image from 'next/image';
 import { BookmarkIcon } from '@heroicons/react/solid';
-
 const JobInfoCard = ({ job }) => {
   useEffect(() => {
     console.log(job);
