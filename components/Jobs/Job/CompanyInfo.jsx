@@ -14,8 +14,8 @@ const CompanyInfo = () => {
           />
         </div>
         <div className="w-full h-full">
-          <h2 className="text-2xl font-semibold mb-3">Meet.jobs</h2>
-          <div className="h-full p-3 sm:p-5 text-md sm:text-lg bg-blue-300 text-blue-900 text-center">
+          <h2 className="text-lg sm:text-2xl font-semibold mb-3 ">Meet.jobs</h2>
+          <div className="h-full p-6 sm:p-8 text-md sm:text-lg bg-blue-300 text-blue-900 text-center">
             Meet.jobs is a social platform foxuing sdlfjsdjf asdjalsdjlk qwjelqkwje lqjelkqwjel
             kqjwelkqj w sdfjsjdfoisjdfoijsdof sjdoijsodijfsdo
           </div>
