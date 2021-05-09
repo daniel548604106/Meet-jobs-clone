@@ -4,6 +4,7 @@ import { useStore } from '../redux/store';
 import { appWithTranslation } from 'next-i18next';
 
 import Header from '../components/Header';
+import HeaderMobile from '../components/HeaderMobile';
 import Footer from '../components/Footer';
 import SearchBar from '../components/SearchBar';
 
@@ -14,6 +15,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Provider store={store}>
         <Header />
+        <HeaderMobile />
         <SearchBar />
         <div className="mt-60px">
           <Component {...pageProps} />

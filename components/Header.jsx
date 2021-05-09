@@ -6,46 +6,6 @@ import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 
-const MobileHeader = () => {
-  const navListItems = [
-    {
-      name: 'home',
-      href: '/',
-    },
-    {
-      name: 'jobs',
-      href: '/jobs',
-    },
-    {
-      name: 'referrer',
-      href: '/referrer-landing',
-    },
-    {
-      name: 'employer',
-      href: '/employer-landing',
-    },
-    {
-      name: 'journal',
-      href: '#',
-    },
-  ];
-  return (
-    <header className="relative sm:hidden">
-      <div className="flex items-center h-60px justify-between">
-        <Image src="/vercel.svg" alt="logo" width="100" height="50" />
-        <SearchIcon className="h-7 text-gray-300 sm:hidden" />
-      </div>
-      <ul className="z-0 absolute bg-white w-screen left-0 transform -translate-y-full sm:hidden">
-        {navListItems.map((item) => (
-          <li className="py-2">
-            <Link href={item.href}>{item.name}</Link>
-          </li>
-        ))}
-      </ul>
-    </header>
-  );
-};
-
 const Header = () => {
   const { t } = useTranslation('common');
   const router = useRouter();
@@ -55,27 +15,26 @@ const Header = () => {
   };
   const navListItems = [
     {
-      name: 'jobs',
+      name: '全球工作',
       href: '/jobs',
     },
     {
-      name: 'referrer',
+      name: '推薦',
       href: '/referrer-landing',
     },
     {
-      name: 'employer',
+      name: '企業徵才',
       href: '/employer-landing',
     },
     {
-      name: 'journal',
+      name: '日誌',
       href: '#',
     },
   ];
   return (
     <>
-      <header className="px-10 fixed top-0 left-0 w-full bg-white z-50 ">
-        <MobileHeader />
-        <div className="hidden  sm:flex justify-between items-center  w-full  h-60px  max-w-1200px mx-auto">
+      <header className="hidden sm:block px-10 fixed top-0 left-0 w-full bg-white z-50 ">
+        <div className=" sm:flex justify-between items-center  w-full  h-60px  max-w-1200px mx-auto">
           <div className="flex items-center justify-between w-full">
             <Link href="/" className="cursor-pointer">
               <Image src="/vercel.svg" alt="logo" width="100" height="50" />
@@ -93,11 +52,19 @@ const Header = () => {
                 </li>
               ))}
             </ul>
-            <div>
-              <span className="mr-3" onClick={() => checkAuth('log-in')}>
+            <div className="ml-2">
+              <span
+                className="px-4 py-2 mr-4 rounded bg-blue-500 text-white cursor-pointer "
+                onClick={() => checkAuth('log-in')}
+              >
                 登入
               </span>
-              <span onClick={() => checkAuth('sign-up')}>註冊</span>
+              <span
+                className="px-4 py-2 text-blue-500 cursor-pointer rounded border border-blue-500"
+                onClick={() => checkAuth('sign-up')}
+              >
+                註冊
+              </span>
             </div>
           </nav>
         </div>
