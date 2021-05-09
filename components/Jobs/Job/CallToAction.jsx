@@ -2,7 +2,7 @@ import React from 'react';
 import { BookmarkIcon, CurrencyDollarIcon } from '@heroicons/react/outline';
 const CallToAction = () => {
   return (
-    <div className="p-5 pb-10 rounded-lg shadow-lg bg-white relative group">
+    <div className="w-full p-5 pb-10 rounded-lg shadow-lg bg-white relative group">
       <div className="flex items-center w-full justify-around mb-2">
         <button className="mr-2 flex-1 px-3 py-2 border rounded text-blue-500 border-blue-500 ">
           應徵

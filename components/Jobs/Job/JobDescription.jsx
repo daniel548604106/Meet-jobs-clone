@@ -2,7 +2,7 @@ import React from 'react';
 import CardContainer from './CardContainer';
 const JobDescription = () => {
   return (
-    <div className="p-10 rounded-lg shadow-xl  bg-white mb-10">
+    <div className="p-5 sm:p-10 rounded-lg shadow-xl  bg-white mb-10">
       <h2 className="font-semibold text-xl mb-3">職缺描述</h2>
       職位摘要 有機會賺大錢！ 商務人士的職涯成長，接觸各種不同的產業、企業、商業模式和人才策略。
       累積跨文化經驗，與各國不同的企業及人才合作。（團隊本身就有多個國籍）

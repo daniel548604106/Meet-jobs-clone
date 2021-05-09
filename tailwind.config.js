@@ -14,10 +14,15 @@ module.exports = {
           "url('https://images.unsplash.com/photo-1531498352491-042fbae4cf57?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1334&q=80')",
         'footer-texture': "url('/img/footer-texture.png')",
       }),
-      color: {
+      colors: {
         'button-blue': '#189fac',
         white: '#fff',
         'bg-white': '#f5f6f7',
+        'blue-dark': '#2768f6',
+        'blue-light': '#5dd4ef',
+      },
+      zIndex: {
+        '-10': '-10',
       },
       width: {
         '30px': '30px',
@@ -36,6 +41,7 @@ module.exports = {
         '60px': '60px',
         '70px': '70px',
         '100px': '100px',
+        '200px': '200px',
         '300px': '300px',
         '730px': '730px',
         '60vh': '60vh',
