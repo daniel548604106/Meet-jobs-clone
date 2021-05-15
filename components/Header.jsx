@@ -26,18 +26,20 @@ const Header = () => {
       name: '企業徵才',
       href: '/employer-landing',
     },
-    {
-      name: '日誌',
-      href: '#',
-    },
   ];
   return (
     <>
       <header className="hidden sm:block px-10 fixed top-0 left-0 w-full bg-white z-50 ">
         <div className=" sm:flex justify-between items-center  w-full  h-60px  max-w-1200px mx-auto">
-          <div className="flex items-center justify-between w-full">
+          <div className="flex items-center justify-between w-full ">
             <Link href="/" className="cursor-pointer">
-              <Image src="/vercel.svg" alt="logo" width="100" height="50" />
+              <Image
+                className="cursor-pointer"
+                src="/vercel.svg"
+                alt="logo"
+                width="100"
+                height="50"
+              />
             </Link>
             <SearchIcon className="h-7 text-gray-300 sm:hidden" />
           </div>
@@ -46,11 +48,20 @@ const Header = () => {
             <ul className="flex flex-col sm:flex-row sm:items-center  bg-white  h-full">
               {navListItems.map((item) => (
                 <li key={item.name} className="  px-4 ">
-                  <Link href={item.href} className="text-md font-bold hover:bg-gray-200 ">
+                  <Link
+                    href={item.href}
+                    target={'_blank'}
+                    className="text-md font-bold hover:bg-gray-200 "
+                  >
                     {item.name}
                   </Link>
                 </li>
               ))}
+              <li className="px-4">
+                <a href="https://www.taiwzoo.com" target="_blank">
+                  日誌
+                </a>
+              </li>
             </ul>
             <div className="ml-2">
               <span
