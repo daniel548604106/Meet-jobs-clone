@@ -1,4 +1,4 @@
-import Hero from '../components/Home/Hero';
+import Hero from '../components/Home/Hero.jsx';
 import Advantage from '../components/Home/Advantage.jsx';
 import HowWeWork from '../components/Home/HowWeWork.jsx';
 import CallToAction from '../components/Home/CallToAction.jsx';
