@@ -33,20 +33,22 @@ const HeaderMobile = () => {
     },
   ];
   return (
-    <header className="h-60px flex items-center justify-between  z-50 align-middle bg-white fixed top-0 left-0 w-screen sm:hidden px-5">
-      <div
-        onClick={() => setIsNavOpen(!isNavOpen)}
-        className="flex items-center z-50 bg-white w-screen"
-      >
-        <Image src="/taiwzoo.svg" className="w-100px h-40px " width={100} height={50} />
-        <ChevronDownIcon
-          className={`h-5 ml-2 text-gray-400 transform ease-in-out duration-75 transition-all ${
-            isNavOpen && 'rotate-180'
-          }`}
-        />
-      </div>
-      <div className="z-50 ">
-        <SearchIcon className="h-5" />
+    <header className="h-60px flex z-50 items-center  justify-between  align-middle  fixed top-0 left-0 w-screen sm:hidden">
+      <div className="z-50 w-full bg-white flex items-center h-full   px-5">
+        <div
+          onClick={() => setIsNavOpen(!isNavOpen)}
+          className="flex items-center z-50 h-full  w-screen"
+        >
+          <Image src="/taiwzoo.svg" className="w-100px h-40px " width={100} height={50} />
+          <ChevronDownIcon
+            className={`h-5 ml-2 text-gray-400 transform ease-in-out duration-75 transition-all ${
+              isNavOpen && 'rotate-180'
+            }`}
+          />
+        </div>
+        <div className="z-50 ">
+          <SearchIcon className="h-5" />
+        </div>
       </div>
       <div
         className={`border-b transform transition-all  ease-in-out duration-200 z-40 py-2 absolute left-full  top-60px px-5 bg-white w-full
@@ -55,7 +57,7 @@ const HeaderMobile = () => {
         <SubMenuMobile setIsSubMenuOpen={setIsSubMenuOpen} isSubMenuOpen={isSubMenuOpen} />
       </div>
       <ul
-        className={`border-b transform transition-all  ease-in-out duration-200 z-40 py-2 absolute left-0  top-60px px-5 bg-white w-full
+        className={` border-b transform transition-all  ease-in-out duration-200 z-40 py-2 absolute left-0  top-60px px-5 bg-white w-full
           ${!isNavOpen && '-translate-y-full'} ${isSubMenuOpen && '-translate-x-full'}`}
       >
         {isUserLoggedIn && (
