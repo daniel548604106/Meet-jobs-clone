@@ -11,7 +11,7 @@ const JobInfoCard = ({ job }) => {
         超時空快速面試 2021
       </div>
       <div className="mr-6">
-        <Image src="/vercel.svg" width="60px" height="60px" />
+        <Image src="/taiwzoo.svg" width="60px" height="60px" />
       </div>
       <div className="w-full">
         <div className="mb-2">
