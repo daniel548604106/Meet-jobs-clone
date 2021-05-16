@@ -99,6 +99,7 @@ module.exports = {
         '350px': '350px',
       },
       maxWidth: {
+        '220px': '220px',
         '300px': '300px',
         '350px': '350px',
         '760px': '760px',

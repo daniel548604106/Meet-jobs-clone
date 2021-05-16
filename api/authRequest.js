@@ -16,3 +16,10 @@ export const postLogin = (data) => {
 export const postSignup = (data) => {
   return request.post('/auth/signup', data);
 };
+
+// 重設 Email 發送
+
+export const forgetPassword = (data) => {
+  console.log(data);
+  return request.post('/auth/password-reset', { email: data });
+};
