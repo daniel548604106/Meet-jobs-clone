@@ -24,6 +24,8 @@ module.exports = {
     JWT_SECRET: 'daniel548604106601406845FDF',
     MONGODB_URI:
       'mongodb+srv://daniel548604106:newhome601406845@cluster0.9n3x1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+    EMAIL_ACCOUNT: 'daniel.yeh548604106@gmail.com',
+    EMAIL_PASSWORD: 'newhome601406845',
     FACEBOOK_CLIENT_ID: 815045899339736,
     FACEBOOK_URI:
       process.env.NODE_ENV === 'production'
