@@ -20,7 +20,7 @@ module.exports = {
     localeDetection: true,
   },
   env: {
-    PUBLIC_URI: 'https://www.taiwzoo.com/api',
+    PUBLIC_URI: 'https://www.taiwzoo.com',
     JWT_SECRET: 'daniel548604106601406845FDF',
     MONGODB_URI:
       'mongodb+srv://daniel548604106:newhome601406845@cluster0.9n3x1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
