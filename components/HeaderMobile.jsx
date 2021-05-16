@@ -38,7 +38,7 @@ const HeaderMobile = () => {
         onClick={() => setIsNavOpen(!isNavOpen)}
         className="flex items-center z-50 bg-white w-screen"
       >
-        <Image src="/vercel.svg" className="w-100px h-40px " width={100} height={50} />
+        <Image src="/taiwzoo.svg" className="w-100px h-40px " width={100} height={50} />
         <ChevronDownIcon
           className={`h-5 ml-2 text-gray-400 transform ease-in-out duration-75 transition-all ${
             isNavOpen && 'rotate-180'

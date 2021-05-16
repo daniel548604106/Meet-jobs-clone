@@ -36,7 +36,7 @@ const Header = () => {
             <Link href="/" className="cursor-pointer">
               <Image
                 className="cursor-pointer"
-                src="/vercel.svg"
+                src="/taiwzoo.svg"
                 alt="logo"
                 width="100"
                 height="50"
