@@ -4,7 +4,7 @@ const index = () => {
   return (
     <div>
       <LoginForm
-        title="Welcome to Meet.jobs
+        title="Welcome to TAIWZOO.jobs
 "
         action="Sign up"
       />

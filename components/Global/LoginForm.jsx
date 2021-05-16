@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import SocialLogin from './SocialLogin';
-import { apiPostLogin } from '../../api/index';
+import { apiPostLogin, apiPostSignup } from '../../api/index';
 import Cookie from 'js-cookie';
 import { useDispatch } from 'react-redux';
 import { setUserLogIn } from '../../redux/actions/userAction';
+
 const LoginForm = ({ title, action }) => {
   const router = useRouter();
   const dispatch = useDispatch();
   const [isError, setIsError] = useState(false);
+  const [authErrorMsg, setAuthErrorMsg] = useState('');
   const checkLocation = () => {
     let location = window.location.pathname;
     location.includes('log-in') ? router.push('/sign-up') : router.push('/log-in');
@@ -18,16 +20,29 @@ const LoginForm = ({ title, action }) => {
     email: '',
     password: '',
   });
-  const postLogin = async () => {
-    try {
-      const {
-        data: { user, token },
-      } = await apiPostLogin(loginData);
-      Cookie.set('token', token);
-      dispatch(setUserLogIn(user));
-      router.push('/');
-    } catch (error) {
-      setIsError(true);
+
+  const createAuth = async (method) => {
+    switch (method) {
+      case 'signup':
+        try {
+          console.log('signup');
+          const { data } = await apiPostSignup(loginData);
+          console.log(data);
+        } catch (error) {
+          setAuthErrorMsg(error.response.data.message);
+          setIsError(true);
+        }
+      case 'login':
+        try {
+          const {
+            data: { user, token },
+          } = await apiPostLogin(loginData);
+          Cookie.set('token', token);
+          dispatch(setUserLogIn(user));
+          router.push('/');
+        } catch (error) {
+          setIsError(true);
+        }
     }
   };
 
@@ -37,8 +52,8 @@ const LoginForm = ({ title, action }) => {
         <h1 className="text-xl sm:text-3xl md:text-3xl text-gray-900 font-semibold mb-10 text-center">
           {title}!
         </h1>
-        <p className={`mb-4 text-sm text-red-500  ${!isError && 'invisible'}`}>
-          Invalid Login , please check your email or password!
+        <p className={`text-center mb-4 text-sm text-red-500  ${!isError && 'invisible'}`}>
+          {authErrorMsg || 'Invalid email or password, please try it once again'}
         </p>
         <input
           type="text"
@@ -54,10 +69,20 @@ const LoginForm = ({ title, action }) => {
           className="focus:border-blue-500 transition-all duration-300 border p-3 rounded-lg mb-5 w-full"
         />
         <button
-          onClick={() => postLogin()}
+          onClick={() =>
+            createAuth(window.location.pathname.includes('sign-up') ? 'signup' : 'login')
+          }
           className="py-3 w-full rounded bg-blue-500 text-white hover:opacity-80 mb-10"
         >
           {action}
+        </button>
+        <button
+          onClick={() => router.push('/forgot-password')}
+          className={`  text-blue-500 mb-5 text-center w-full ${
+            !window.location.pathname.includes('log-in') && 'hidden'
+          }`}
+        >
+          Forget Password
         </button>
         <hr className="mb-8" />
         <SocialLogin />

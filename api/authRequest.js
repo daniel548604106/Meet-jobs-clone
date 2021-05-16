@@ -11,3 +11,8 @@ export const postOAuthLogin = (data) => {
 export const postLogin = (data) => {
   return request.post('/auth/login', data);
 };
+
+// 註冊
+export const postSignup = (data) => {
+  return request.post('/auth/signup', data);
+};
