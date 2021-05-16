@@ -63,7 +63,12 @@ const HeaderMobile = () => {
         {isUserLoggedIn && (
           <div className="flex items-center justify-between py-3">
             <div onClick={() => setIsSubMenuOpen(!isSubMenuOpen)} className="flex items-center">
-              <Image src={userInfo.picture} width={50} height={50} className="rounded-full" />
+              <Image
+                src={userInfo.picture || '/../public/taiwzoo.svg'}
+                width={50}
+                height={50}
+                className="rounded-full"
+              />
               <span className="ml-5 text-gray-700 text-lg">{userInfo.name}</span>
             </div>
             <ChevronRightIcon className="h-5 text-gray-400" />

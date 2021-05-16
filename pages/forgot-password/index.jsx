@@ -4,6 +4,7 @@ const index = () => {
   const [email, setEmail] = useState('');
   const sendEmail = async () => {
     try {
+      console.log('123', email);
       const res = await apiForgetPassword(email);
       console.log(res);
     } catch (error) {

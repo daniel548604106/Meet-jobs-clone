@@ -29,7 +29,7 @@ const LoginForm = ({ title, action }) => {
           const { data } = await apiPostSignup(loginData);
           console.log(data);
         } catch (error) {
-          setAuthErrorMsg(error.response.data.message);
+          setAuthErrorMsg('no');
           setIsError(true);
         }
       case 'login':

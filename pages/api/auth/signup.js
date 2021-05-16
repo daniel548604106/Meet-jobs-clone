@@ -13,16 +13,18 @@ export default async function handler(req, res) {
         // Check if user exists
         const user = await User.findOne({ email });
         if (user) {
-          res.status(400).json({
+          return res.status(400).json({
             message: 'This email has already been registered',
           });
         }
 
         // Save to DB
-        const newUser = await User.save({
+        const newUser = await User.create({
           email,
           password,
         });
+
+        console.log('modified', newUser);
 
         res.status(200).json({
           user: newUser,

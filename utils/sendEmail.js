@@ -1,11 +1,4 @@
 import nodemailer from 'nodemailer';
-const mailData = {
-  from: process.env.EMAIL_ACCOUNT,
-  to: 'daniel548604106@gmail.com',
-  subject: 'Message from daniel',
-  text: 'testing',
-  html: `<div>Test 1</div>`,
-};
 
 const transporter = nodemailer.createTransport({
   port: 465,
@@ -17,7 +10,16 @@ const transporter = nodemailer.createTransport({
   secure: true,
 });
 
-export const sendPasswordReset = async () => {
+export const sendPasswordReset = async (userEmail, resetURL) => {
+  const mailData = {
+    from: process.env.EMAIL_ACCOUNT,
+    to: userEmail,
+    subject: 'Taiwzoo - Password Reset',
+    text: 'testing',
+    html: `<div>Please click on the following link for your password reset.
+    <a style="background: 'blue';color: 'white'; padding: '5px 10px';border-radius: '10px' " href=${resetURL} target="_blank" >Reset Password</a> </div>`,
+  };
+
   console.log('sending');
   try {
     await transporter.sendMail(mailData);

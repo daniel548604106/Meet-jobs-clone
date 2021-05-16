@@ -71,7 +71,7 @@ const Header = () => {
               >
                 <Image
                   className="w-50px h-50px  rounded-full"
-                  src={userInfo.picture}
+                  src={userInfo.picture || '/../public/taiwzoo.svg'}
                   width="40"
                   height="40"
                 />
