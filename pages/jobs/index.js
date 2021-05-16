@@ -8,9 +8,11 @@ const index = ({ jobs }) => {
   return (
     <div className="p-3 mx-auto max-w-5xl py-5 sm:py-10">
       <div className="flex justify-between items-center mb-2 sm:mb-5">
-        <p>
-          1-{jobs.length < 20 ? jobs.length : 20} of {jobs.length} jobs
-        </p>
+        {jobs && (
+          <p>
+            1-{jobs.length < 20 ? jobs.length : 20} of {jobs.length} jobs
+          </p>
+        )}
         <div className="focus:bg-blue-500 focus:text-white rounded px-5 py-3 hover:bg-white transition-all duration-200 cursor-pointer text-blue-500 flex items-center">
           <span className="inline pr-5">最相關</span> <ChevronDownIcon className="h-6" />
         </div>
@@ -29,7 +31,8 @@ export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
   const res = await request.get('/jobs');
-  const jobs = res.data.jobs;
+  const jobs = res.data.jobs || null;
+  console.log(res.data, jobs);
 
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
