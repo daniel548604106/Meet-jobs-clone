@@ -12,9 +12,11 @@ const LoginForm = ({ title, action }) => {
   const [isError, setIsError] = useState(false);
   const [authErrorMsg, setAuthErrorMsg] = useState('');
   const checkLocation = () => {
-    let location = window.location.pathname;
-    location.includes('log-in') ? router.push('/sign-up') : router.push('/log-in');
+    router.pathname.includes('log-in') ? router.push('/sign-up') : router.push('/log-in');
   };
+  // useEffect(() => {
+  //   console.log(router);
+  // }, [router]);
 
   const [loginData, setLoginData] = useState({
     email: '',
@@ -69,9 +71,7 @@ const LoginForm = ({ title, action }) => {
           className="focus:border-blue-500 transition-all duration-300 border p-3 rounded-lg mb-5 w-full"
         />
         <button
-          onClick={() =>
-            createAuth(window.location.pathname.includes('sign-up') ? 'signup' : 'login')
-          }
+          onClick={() => createAuth(router.pathname.includes('sign-up') ? 'signup' : 'login')}
           className="py-3 w-full rounded bg-blue-500 text-white hover:opacity-80 mb-10"
         >
           {action}
@@ -79,7 +79,7 @@ const LoginForm = ({ title, action }) => {
         <button
           onClick={() => router.push('/forgot-password')}
           className={`  text-blue-500 mb-5 text-center w-full ${
-            !window.location.pathname.includes('log-in') && 'hidden'
+            !router.pathname.includes('log-in') && 'hidden'
           }`}
         >
           Forget Password
