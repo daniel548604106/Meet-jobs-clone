@@ -20,18 +20,17 @@ module.exports = {
     localeDetection: true,
   },
   env: {
-    PUBLIC_URL: 'https://www.taiwzoo.com',
-    JWT_SECRET: 'daniel548604106601406845FDF',
-    MONGODB_URI:
-      'mongodb+srv://daniel548604106:newhome601406845@cluster0.9n3x1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
-    EMAIL_ACCOUNT: 'daniel.yeh548604106@gmail.com',
-    EMAIL_PASSWORD: 'newhome601406845',
-    FACEBOOK_CLIENT_ID: 815045899339736,
+    PUBLIC_URL: process.env.PUBLIC_URL,
+    JWT_SECRET: process.env.JWT_SECRET,
+    MONGODB_URI: process.env.MONGODB_URI,
+    EMAIL_ACCOUNT: process.env.EMAIL_ACCOUNT,
+    EMAIL_PASSWORD: process.env.EMAIL_PASSWORD,
+    FACEBOOK_CLIENT_ID: process.env.FACEBOOK_CLIENT_ID,
     FACEBOOK_URI:
       process.env.NODE_ENV === 'production'
-        ? 'https://www.taiwzoo.com/oauth/facebook'
+        ? process.env.FACEBOOK_URI
         : 'http://localhost:3000/oauth/facebook',
-    FACEBOOK_CLIENT_SECRET: 'fb9e3b290452e80322a7c43f1bb6486d',
+    FACEBOOK_CLIENT_SECRET: process.env.FACEBOOK_CLIENT_SECRET,
   },
   // async rewrites() {
   //   return {
