@@ -1,13 +1,34 @@
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import SocialLogin from './SocialLogin';
-import React, { useEffect } from 'react';
-
+import { apiPostLogin } from '../../api/index';
+import Cookie from 'js-cookie';
+import { useDispatch } from 'react-redux';
+import { setUserLogIn } from '../../redux/actions/userAction';
 const LoginForm = ({ title, action }) => {
   const router = useRouter();
-
+  const dispatch = useDispatch();
+  const [isError, setIsError] = useState(false);
   const checkLocation = () => {
     let location = window.location.pathname;
     location.includes('log-in') ? router.push('/sign-up') : router.push('/log-in');
+  };
+
+  const [loginData, setLoginData] = useState({
+    email: '',
+    password: '',
+  });
+  const postLogin = async () => {
+    try {
+      const {
+        data: { user, token },
+      } = await apiPostLogin(loginData);
+      Cookie.set('token', token);
+      dispatch(setUserLogIn(user));
+      router.push('/');
+    } catch (error) {
+      setIsError(true);
+    }
   };
 
   return (
@@ -16,17 +37,26 @@ const LoginForm = ({ title, action }) => {
         <h1 className="text-xl sm:text-3xl md:text-3xl text-gray-900 font-semibold mb-10 text-center">
           {title}!
         </h1>
+        <p className={`mb-4 text-sm text-red-500  ${!isError && 'invisible'}`}>
+          Invalid Login , please check your email or password!
+        </p>
         <input
           type="text"
+          value={loginData.email}
+          onChange={(e) => setLoginData({ ...loginData, email: e.target.value })}
           placeholder="Email address"
-          className="focus:border-blue-500 transition-all duration-300 border p-3 rounded mb-3 w-full"
+          className="focus:border-blue-500 transition-all duration-300 border p-3 rounded-lg mb-3 w-full"
         />
         <input
-          type="text"
+          type="password"
+          onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
           placeholder="Password"
-          className="focus:border-blue-500 transition-all duration-300 border p-3 rounded mb-3 w-full"
+          className="focus:border-blue-500 transition-all duration-300 border p-3 rounded-lg mb-5 w-full"
         />
-        <button className="py-3 w-full rounded bg-blue-500 text-white hover:opacity-80 mb-10">
+        <button
+          onClick={() => postLogin()}
+          className="py-3 w-full rounded bg-blue-500 text-white hover:opacity-80 mb-10"
+        >
           {action}
         </button>
         <hr className="mb-8" />
