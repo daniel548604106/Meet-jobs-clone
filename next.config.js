@@ -24,7 +24,10 @@ module.exports = {
     MONGODB_URI:
       'mongodb+srv://daniel548604106:newhome601406845@cluster0.9n3x1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
     FACEBOOK_CLIENT_ID: 815045899339736,
-    FACEBOOK_URI: 'http://localhost:3000/oauth/facebook',
+    FACEBOOK_URI:
+      process.env.NODE_ENV === 'production'
+        ? 'https://www.taiwzoo.com/oauth/facebook'
+        : 'http://localhost:3000/oauth/facebook',
     FACEBOOK_CLIENT_SECRET: 'fb9e3b290452e80322a7c43f1bb6486d',
   },
   // async rewrites() {
