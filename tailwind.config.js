@@ -23,6 +23,7 @@ module.exports = {
       },
       zIndex: {
         '-10': '-10',
+        100: '100',
       },
       width: {
         '30px': '30px',
@@ -30,6 +31,7 @@ module.exports = {
         '50px': '50px',
         '60px': '60px',
         '70px': '70px',
+        '100px': '100px',
         '200px': '200px',
         '300px': '300px',
         '500px': '500px',
