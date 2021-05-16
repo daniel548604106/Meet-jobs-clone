@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import SocialLogin from './SocialLogin';
 import React, { useEffect } from 'react';
 
 const LoginForm = ({ title, action }) => {
@@ -28,6 +29,9 @@ const LoginForm = ({ title, action }) => {
         <button className="py-3 w-full rounded bg-blue-500 text-white hover:opacity-80 mb-10">
           {action}
         </button>
+        <hr className="mb-8" />
+        <SocialLogin />
+
         <p className="text-gray-400 text-sm mb-5">
           By continuing, you agree to our{' '}
           <span
