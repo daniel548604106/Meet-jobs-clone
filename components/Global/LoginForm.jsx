@@ -14,9 +14,6 @@ const LoginForm = ({ title, action }) => {
   const checkLocation = () => {
     router.pathname.includes('log-in') ? router.push('/sign-up') : router.push('/log-in');
   };
-  // useEffect(() => {
-  //   console.log(router);
-  // }, [router]);
 
   const [loginData, setLoginData] = useState({
     email: '',
