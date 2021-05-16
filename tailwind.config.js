@@ -35,6 +35,7 @@ module.exports = {
         '70px': '70px',
         '100px': '100px',
         '200px': '200px',
+        '220px': '220px',
         '300px': '300px',
         '500px': '500px',
       },
@@ -61,6 +62,7 @@ module.exports = {
         '730px': '730px',
         '60vh': '60vh',
         '70vh': '70vh',
+        '80vh': '80vh',
         '90vh': '90vh',
       },
       margin: {
@@ -97,6 +99,7 @@ module.exports = {
         '350px': '350px',
       },
       maxWidth: {
+        '220px': '220px',
         '300px': '300px',
         '350px': '350px',
         '760px': '760px',
