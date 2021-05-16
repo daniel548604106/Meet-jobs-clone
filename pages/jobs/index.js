@@ -28,7 +28,7 @@ const index = ({ jobs }) => {
 export async function getStaticProps() {
   // Call an external API endpoint to get posts.
   // You can use any data fetching library
-  const res = await request.get('/api/jobs');
+  const res = await request.get('/jobs');
   const jobs = res.data.jobs;
 
   // By returning { props: { posts } }, the Blog component
