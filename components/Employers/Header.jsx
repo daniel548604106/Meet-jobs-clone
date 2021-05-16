@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className="w-full p-10 rounded shadow-lg flex">
       <div className="mr-10">
-        <Image src="/vercel.svg" width="100px" height="100px" />
+        <Image src="/taiwzoo.svg" width="100px" height="100px" />
       </div>
       <div>
         <h1 className="text-3xl font-bold mb-4 ">Meet.jobs</h1>
