@@ -48,17 +48,17 @@ const Header = () => {
             <SearchIcon className="h-7 text-gray-300" />
             <ul className="flex flex-col sm:flex-row sm:items-center  bg-white  h-full">
               {navListItems.map((item) => (
-                <li key={item.name} className="  px-4 ">
+                <li key={item.name} className=" whitespace-nowrap px-4 ">
                   <Link
                     href={item.href}
                     target={'_blank'}
-                    className="text-md whitespace-nowrap font-bold hover:bg-gray-200 "
+                    className="text-md flex-nowrap whitespace-nowrap font-bold hover:bg-gray-200 "
                   >
                     {item.name}
                   </Link>
                 </li>
               ))}
-              <li className="px-4">
+              <li className="px-4 whitespace-nowrap">
                 <a href="https://www.taiwzoo.com" target="_blank">
                   日誌
                 </a>
@@ -83,15 +83,15 @@ const Header = () => {
                 />
               </div>
             ) : (
-              <div className="ml-2">
+              <div className="ml-2 flex-nowrap whitespace-nowrap">
                 <span
-                  className="px-4 py-2 mr-4 rounded bg-blue-500 text-white cursor-pointer "
+                  className=" whitespace-nowrap px-4 py-2 mr-4 rounded bg-blue-500 text-white cursor-pointer "
                   onClick={() => checkAuth('log-in')}
                 >
                   登入
                 </span>
                 <span
-                  className="px-4 py-2 text-blue-500 cursor-pointer rounded border border-blue-500"
+                  className="whitespace-nowrap px-4 py-2 text-blue-500 cursor-pointer rounded border border-blue-500"
                   onClick={() => checkAuth('sign-up')}
                 >
                   註冊
