@@ -3,6 +3,7 @@ import request from '../../lib/axiosConfig';
 import JobInfoCard from '../../components/Jobs/JobInfoCard';
 import { useRouter } from 'next/router';
 import { ChevronDownIcon } from '@heroicons/react/solid';
+import Head from 'next/head';
 const index = ({ jobs }) => {
   const router = useRouter();
   return (
