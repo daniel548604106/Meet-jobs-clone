@@ -11,16 +11,17 @@ const index = ({ jobs }) => {
       <Head>
         <title>找工作 | TAIWZOO </title>
         <meta
-          name="description"
+          property="description"
           content="提供全球各種最搶手的工作，不論大公司或小公司，都可以滿足你求職的需求"
         />
-        <meta key="og:title" name="og:title" content={'找工作 | TAIWZOO  '} />
+        <meta key="og:title" property="og:title" content={'找工作 | TAIWZOO  '} />
         <meta
           key="og:description"
           name="og:description"
           content="提供全球各種最搶手的工作，不論大公司或小公司，都可以滿足你求職的需求"
         />
-        <meta key="og:image" name="og:image" content={`/../../public/taiwzoo_og.png`} />
+        <meta property="og:url" content={`${process.env.PUBLIC_URL}/jobs`} />
+        <meta key="og:image" property="og:image" content={`/../../public/taiwzoo_og.png`} />
       </Head>
       <div className="p-3 mx-auto max-w-5xl py-5 sm:py-10">
         <div className="flex justify-between items-center mb-2 sm:mb-5">

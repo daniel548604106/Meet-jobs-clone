@@ -16,13 +16,15 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>TAIWZOO | 台灣科技族</title>
         <meta name="description" content="TAIWZOO 是專為台灣科技人才打造的求職平台" />
-        <meta key="og:title" name="og:title" content={'TAIWZOO | 台灣科技族'} />
+        <meta key="og:title" property="og:title" content={'TAIWZOO | 台灣科技族'} />
         <meta
           key="og:description"
-          name="og:description"
+          property="og:description"
           content="台灣科技人求職最佳平台，不論是 junior 還是 senior ，各種需求都等你來挑戰！"
         />
-        <meta key="og:image" name="og:image" content={`/../../public/taiwzoo_og.png`} />
+        <meta key="og:image" property="og:image" content={`/../../public/taiwzoo_og.png`} />
+        <meta property="fb:app_id" content="815045899339736" />
+        <meta property="og:url" content={process.env.PUBLIC_URL} />
       </Head>
       <Provider store={store}>
         <Header />
