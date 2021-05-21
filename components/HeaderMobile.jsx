@@ -61,8 +61,11 @@ const HeaderMobile = () => {
           ${!isNavOpen && '-translate-y-full'} ${isSubMenuOpen && '-translate-x-full'}`}
       >
         {isUserLoggedIn && (
-          <div className="flex items-center justify-between py-3">
-            <div onClick={() => setIsSubMenuOpen(!isSubMenuOpen)} className="flex items-center">
+          <div
+            onClick={() => setIsSubMenuOpen(!isSubMenuOpen)}
+            className="flex items-center justify-between py-3"
+          >
+            <div className="flex items-center">
               <Image
                 src={userInfo.picture || '/../public/taiwzoo.svg'}
                 width={50}
