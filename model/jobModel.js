@@ -11,6 +11,23 @@ const jobSchema = new mongoose.Schema(
     salary: {
       type: String,
     },
+    description: {
+      type: String,
+    },
+    location: {
+      type: String,
+    },
+    job_type: {
+      type: String,
+    },
+    skills_requirement: [
+      {
+        type: String,
+      },
+    ],
+    job_function: {
+      type: String,
+    },
   },
   {
     timestamps: true,
