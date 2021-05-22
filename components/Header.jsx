@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { SearchIcon, ChevronDownIcon } from '@heroicons/react/outline';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
+import { toggleSearchBar } from '../redux/actions/globalAction';
 const Header = () => {
   const { t } = useTranslation('common');
   const router = useRouter();
+  const dispatch = useDispatch();
   const isUserLoggedIn = useSelector((state) => state.user.isUserLoggedIn);
   const userInfo = useSelector((state) => state.user.userInfo);
   const checkAuth = (page) => {
@@ -20,7 +22,7 @@ const Header = () => {
       href: '/jobs',
     },
     {
-      name: '推薦',
+      name: '我要推薦',
       href: '/referrer-landing',
     },
     {
@@ -31,8 +33,8 @@ const Header = () => {
   return (
     <>
       <header className="hidden sm:block px-10 fixed top-0 left-0 w-full bg-white z-100 ">
-        <div className=" bg-white sm:flex justify-between items-center  w-full  h-60px  max-w-1200px mx-auto">
-          <div className="flex items-center justify-between w-full ">
+        <div className=" bg-white flex-nowrap sm:flex items-center  w-full  h-60px  max-w-1200px mx-auto">
+          <div className="mr-auto">
             <Link href="/" className="cursor-pointer">
               <Image
                 className="cursor-pointer"
@@ -42,28 +44,30 @@ const Header = () => {
                 height="50"
               />
             </Link>
-            <SearchIcon className="h-7 text-gray-300 sm:hidden" />
           </div>
-          <nav className="w-full sm:flex sm:items-center hidden ">
+          <div onClick={() => dispatch(toggleSearchBar())} className="p-4 cursor-pointer">
             <SearchIcon className="h-7 text-gray-300" />
-            <ul className="flex flex-col sm:flex-row sm:items-center  bg-white  h-full">
-              {navListItems.map((item) => (
-                <li key={item.name} className=" whitespace-nowrap px-4 ">
-                  <Link
-                    href={item.href}
-                    target={'_blank'}
-                    className="text-md flex-nowrap whitespace-nowrap font-bold hover:bg-gray-200 "
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-              <li className="px-4 whitespace-nowrap">
-                <a href="https://www.taiwzoo.com" target="_blank">
-                  日誌
-                </a>
+          </div>
+          <ul className="h-full flex items-center">
+            {navListItems.map((item) => (
+              <li
+                key={item.name}
+                className="inline-block whitespace-nowrap   px-3    cursor-pointer"
+              >
+                <Link
+                  href={item.href}
+                  target={'_blank'}
+                  className="text-md font-bold hover:bg-gray-200 "
+                >
+                  {item.name}
+                </Link>
               </li>
-            </ul>
+            ))}
+            <li className="px-4 inline-block whitespace-nowrap">
+              <a href="https://www.taiwzoo.com" target="_blank">
+                日誌
+              </a>
+            </li>
             {isUserLoggedIn ? (
               <div
                 onClick={() => setDropDownOpen(!isDropDownOpen)}
@@ -83,9 +87,9 @@ const Header = () => {
                 />
               </div>
             ) : (
-              <div className="ml-2 flex-nowrap whitespace-nowrap">
+              <div className="ml-2 inline-block flex-nowrap whitespace-nowrap">
                 <span
-                  className=" whitespace-nowrap px-4 py-2 mr-4 rounded bg-blue-500 text-white cursor-pointer "
+                  className=" whitespace-nowrap inline-block px-4 py-2 mr-4 rounded bg-blue-500 text-white cursor-pointer "
                   onClick={() => checkAuth('log-in')}
                 >
                   登入
@@ -98,7 +102,7 @@ const Header = () => {
                 </span>
               </div>
             )}
-          </nav>
+          </ul>
         </div>
       </header>
     </>

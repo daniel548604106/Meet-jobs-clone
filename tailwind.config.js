@@ -65,6 +65,10 @@ module.exports = {
         '80vh': '80vh',
         '90vh': '90vh',
       },
+      maxHeight: {
+        0: '0px',
+        auto: '100%',
+      },
       margin: {
         '30px': '30px',
         '40px': '40px',
