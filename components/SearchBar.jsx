@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-
+import { useSelector } from 'react-redux';
 const SearchBar = () => {
-  const [active, setActive] = useState(false);
+  const isSearchBarShow = useSelector((state) => state.global.isSearchBarShow);
   return (
     <div
       className={`
-          bg-gray-300 hidden fixed z-40 w-full top-0  ease-in-out duration-300
-        ${active && 'translate-y-full transform transition-all'} `}
+          bg-gray-300  fixed z-40 w-full top-60px transition-all duration-300 max-h-0 overflow-hidden
+        ${isSearchBarShow && ' max-h-auto'} `}
     >
-      <div className="h-60px py-2 flex flex-col sm:flex-row max-w-760px mx-auto px-3">
+      <div className=" py-2 flex flex-col sm:flex-row max-w-760px mx-auto px-3">
         <input
           type="text"
           placeholder="Job,Company or Keyword"
