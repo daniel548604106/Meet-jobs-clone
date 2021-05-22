@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from 'next/router';
 import { ChevronDownIcon, SearchIcon, ChevronRightIcon } from '@heroicons/react/solid';
 import SubMenuMobile from './SubMenuMobile';
+import { toggleSearchBar } from '../redux/actions/globalAction';
 const HeaderMobile = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const router = useRouter();
+  const dispatch = useDispatch();
   const isUserLoggedIn = useSelector((state) => state.user.isUserLoggedIn);
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
   const userInfo = useSelector((state) => state.user.userInfo);
@@ -46,7 +48,7 @@ const HeaderMobile = () => {
             }`}
           />
         </div>
-        <div className="z-50 ">
+        <div className="z-50 " onClick={() => dispatch(toggleSearchBar())}>
           <SearchIcon className="h-5" />
         </div>
       </div>
